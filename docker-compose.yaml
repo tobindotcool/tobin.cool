@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  web:
+    build: 
+      context: website
+    image: tobindotcool/tobin.cool:v0.0.1
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    volumes:
+      - /etc/letsencrypt/live/tobin.cool:/etc/letsencrypt/live/tobin.cool
+      - /etc/letsencrypt/archive/tobin.cool:/etc/letsencrypt/archive/tobin.cool
